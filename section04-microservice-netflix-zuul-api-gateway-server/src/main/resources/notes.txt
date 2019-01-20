@@ -1,0 +1,19 @@
+http://localhost:8765/{application-name}/{uri}
+
+e.g.
+http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/USD
+
+rabbitmq:
+brew services start rabbitmq
+
+zipkin:
+RABBIT_URI=amqp://localhost java -jar zipkin.jar
+http://localhost:9411
+
+Starting Order:
+
+1. netflix-eureka-naming-server
+2. zipkin
+3. currency-exchange-service
+4. currency-conversion-service
+5. netflix-zuul-api-gateway-server
